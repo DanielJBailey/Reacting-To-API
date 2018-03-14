@@ -73,7 +73,7 @@ class Results extends Component {
 
                 </React.Fragment>
             )
-        } else if (this.state.peopleLoaded === true) {
+        } else if (this.state.peopleLoaded === true) {//hasLoaded is true and peopleLoaded is true
             return (
                 <React.Fragment>
 
