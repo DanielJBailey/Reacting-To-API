@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../src/app.css';
 import 'isomorphic-fetch';
 import 'es6-promise';
+import People from '../src/people';
+import Films from '../src/films';
 
 //Set initial states to false
 class Results extends Component {
@@ -20,8 +22,16 @@ class Results extends Component {
         this.setState({ hasLoaded: true, filmsLoaded: true, peopleLoaded: false });
     }
 
+    toggleFilmsOff(event) {
+        this.setState({ hasLoaded: false, filmsLoaded: false, peopleLoaded: false });
+    }
+
     togglePeopleLoaded(event) {
         this.setState({ hasLoaded: true, filmsLoaded: false, peopleLoaded: true })
+    }
+
+    togglePeopleOff(event) {
+        this.setState({ hasLoaded: false, filmsLoaded: false, peopleLoaded: false });
     }
 
 //Create render function to render buttons based on state and call film and people components to pull API
@@ -41,6 +51,7 @@ class Results extends Component {
                             onClick={(event) => { this.togglePeopleLoaded(event) }}
                             className='btn ppl-btn'>Load People</button>
                     </div>
+                    
 
                 </React.Fragment>
             ) 
@@ -51,12 +62,14 @@ class Results extends Component {
                     <div className="button-container">
                     <button
                             type="button"
-                            className='btn films-btn active'>Films Loaded</button>
+                            onClick={(event) => { this.toggleFilmsOff(event) }}
+                            className='btn films-btn active'>Remove Films</button>
                         <button
                             type="button"
                             onClick={(event) => { this.togglePeopleLoaded(event) }}
                             className='btn ppl-btn'>Load People</button>
                     </div>
+                    <Films />
 
                 </React.Fragment>
             )
@@ -71,8 +84,10 @@ class Results extends Component {
                             className='btn films-btn'>Load Films</button>
                             <button
                             type="button"
-                            className='btn ppl-btn active'>People Loaded</button>
+                            onClick={(event) => { this.togglePeopleOff(event) }}
+                            className='btn ppl-btn active'>Remove People</button>
                     </div>
+                    <People />
 
                 </React.Fragment>
             )

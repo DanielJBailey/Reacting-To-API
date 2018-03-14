@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
 * {
     margin: 0;
     padding: 0;
     text-decoration: none !important;
+    font-family: 'Raleway', sans-serif;
 }
 
 body {
@@ -10,7 +13,7 @@ body {
 
 .header {
     background-color: white;
-    padding: 3em;
+    padding: 2em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,12 +37,38 @@ body {
     margin: 10px;
 }
 
-.films-btn:hover, .ppl-btn:hover {
-    background-color: #00cec9;
+.active {
+    background-color: #ff7675;
     color: white;
 }
 
-.active {
-    background-color: #00cec9;
+.section-title {
+    font-weight: bold;
     color: white;
+    padding: 0;
+}
+
+.section-hr {
+    width: 60px;
+    background-color: #2d3436;
+    height: 5px;
+    padding: 0;
+    margin: 0;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.desc {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.score {
+    font-size: 14px;
 }
